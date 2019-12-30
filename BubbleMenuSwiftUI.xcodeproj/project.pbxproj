@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		B5000D28237CB19700ED7C41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5000D27237CB19700ED7C41 /* AppDelegate.swift */; };
 		B5000D2A237CB19700ED7C41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5000D29237CB19700ED7C41 /* SceneDelegate.swift */; };
-		B5000D2C237CB19700ED7C41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5000D2B237CB19700ED7C41 /* ContentView.swift */; };
+		B5000D2C237CB19700ED7C41 /* ArcMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5000D2B237CB19700ED7C41 /* ArcMenuView.swift */; };
 		B5000D2E237CB19B00ED7C41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5000D2D237CB19B00ED7C41 /* Assets.xcassets */; };
 		B5000D31237CB19B00ED7C41 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5000D30237CB19B00ED7C41 /* Preview Assets.xcassets */; };
 		B5000D34237CB19B00ED7C41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5000D32237CB19B00ED7C41 /* LaunchScreen.storyboard */; };
 		B5000D3F237CB19B00ED7C41 /* BubbleMenuSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5000D3E237CB19B00ED7C41 /* BubbleMenuSwiftUITests.swift */; };
 		B5000D4A237CB19B00ED7C41 /* BubbleMenuSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5000D49237CB19B00ED7C41 /* BubbleMenuSwiftUIUITests.swift */; };
+		B5000D58237CBC3A00ED7C41 /* ArcMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5000D57237CBC3A00ED7C41 /* ArcMenuCell.swift */; };
+		B59913DC23B6DC45008E0018 /* ArcMenuConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59913DB23B6DC45008E0018 /* ArcMenuConstants.swift */; };
+		B59913DE23B6FEDA008E0018 /* ArcMenuCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59913DD23B6FEDA008E0018 /* ArcMenuCurve.swift */; };
+		B5AF4FDD23BA560200C94223 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AF4FDC23BA560200C94223 /* ContentView.swift */; };
+		B5FBBB8A23B7295900BACB45 /* MyMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBBB8923B7295900BACB45 /* MyMenuItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +43,7 @@
 		B5000D24237CB19700ED7C41 /* BubbleMenuSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubbleMenuSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5000D27237CB19700ED7C41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5000D29237CB19700ED7C41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B5000D2B237CB19700ED7C41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B5000D2B237CB19700ED7C41 /* ArcMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcMenuView.swift; sourceTree = "<group>"; };
 		B5000D2D237CB19B00ED7C41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5000D30237CB19B00ED7C41 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B5000D33237CB19B00ED7C41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +54,11 @@
 		B5000D45237CB19B00ED7C41 /* BubbleMenuSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubbleMenuSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5000D49237CB19B00ED7C41 /* BubbleMenuSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleMenuSwiftUIUITests.swift; sourceTree = "<group>"; };
 		B5000D4B237CB19B00ED7C41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5000D57237CBC3A00ED7C41 /* ArcMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcMenuCell.swift; sourceTree = "<group>"; };
+		B59913DB23B6DC45008E0018 /* ArcMenuConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcMenuConstants.swift; sourceTree = "<group>"; };
+		B59913DD23B6FEDA008E0018 /* ArcMenuCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcMenuCurve.swift; sourceTree = "<group>"; };
+		B5AF4FDC23BA560200C94223 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B5FBBB8923B7295900BACB45 /* MyMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +109,11 @@
 		B5000D26237CB19700ED7C41 /* BubbleMenuSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				B5AF4FDB23BA50F400C94223 /* ArcMenu */,
 				B5000D27237CB19700ED7C41 /* AppDelegate.swift */,
 				B5000D29237CB19700ED7C41 /* SceneDelegate.swift */,
-				B5000D2B237CB19700ED7C41 /* ContentView.swift */,
+				B5FBBB8923B7295900BACB45 /* MyMenuItem.swift */,
+				B5AF4FDC23BA560200C94223 /* ContentView.swift */,
 				B5000D2D237CB19B00ED7C41 /* Assets.xcassets */,
 				B5000D32237CB19B00ED7C41 /* LaunchScreen.storyboard */,
 				B5000D35237CB19B00ED7C41 /* Info.plist */,
@@ -134,6 +146,17 @@
 				B5000D4B237CB19B00ED7C41 /* Info.plist */,
 			);
 			path = BubbleMenuSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		B5AF4FDB23BA50F400C94223 /* ArcMenu */ = {
+			isa = PBXGroup;
+			children = (
+				B59913DB23B6DC45008E0018 /* ArcMenuConstants.swift */,
+				B59913DD23B6FEDA008E0018 /* ArcMenuCurve.swift */,
+				B5000D2B237CB19700ED7C41 /* ArcMenuView.swift */,
+				B5000D57237CBC3A00ED7C41 /* ArcMenuCell.swift */,
+			);
+			path = ArcMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +290,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5FBBB8A23B7295900BACB45 /* MyMenuItem.swift in Sources */,
+				B59913DE23B6FEDA008E0018 /* ArcMenuCurve.swift in Sources */,
+				B5AF4FDD23BA560200C94223 /* ContentView.swift in Sources */,
+				B59913DC23B6DC45008E0018 /* ArcMenuConstants.swift in Sources */,
 				B5000D28237CB19700ED7C41 /* AppDelegate.swift in Sources */,
 				B5000D2A237CB19700ED7C41 /* SceneDelegate.swift in Sources */,
-				B5000D2C237CB19700ED7C41 /* ContentView.swift in Sources */,
+				B5000D58237CBC3A00ED7C41 /* ArcMenuCell.swift in Sources */,
+				B5000D2C237CB19700ED7C41 /* ArcMenuView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
