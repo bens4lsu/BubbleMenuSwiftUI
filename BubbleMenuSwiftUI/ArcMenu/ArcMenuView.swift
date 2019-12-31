@@ -12,14 +12,10 @@
 
 import SwiftUI
 
-protocol ArcMenuViewItem: Hashable {
-    associatedtype T: View
-    var view: T { get }
-}
-
 struct ArcMenuView<Item>: View where Item:ArcMenuViewItem {
     
     @ObservedObject var curve = ArcMenuCurve(start: CGPoint(x: 0, y: 0), controlPoint: CGPoint(x:0, y:0), end: CGPoint(x:0, y:0))
+    @EnvironmentObject var menuObservable: ArcMenuViewObservable<Item>
     
     var items: [Item]
     
@@ -27,7 +23,7 @@ struct ArcMenuView<Item>: View where Item:ArcMenuViewItem {
         
         GeometryReader { geometry in
             Path { path in
-                let width = geometry.size.width
+              let width = geometry.size.width
                 let height = geometry.size.height
                 let startX = min(width * ArcMenuConstants.curveStartFactor, ArcMenuConstants.maxStartX)
                 let curveStart = CGPoint(x: startX, y: 0)
@@ -41,9 +37,7 @@ struct ArcMenuView<Item>: View where Item:ArcMenuViewItem {
                     self.curve.controlPoint = curveControlPoint
                     self.curve.end = curveEnd
                 }
-                
-                print (self.curve)
-                
+                                
                 path.move(to: CGPoint(x: 0, y: 0))
                 path.addLine(to: curveStart)
                 path.addQuadCurve(to: curveEnd, control: curveControlPoint)
@@ -53,7 +47,7 @@ struct ArcMenuView<Item>: View where Item:ArcMenuViewItem {
             VStack{
                 ScrollView {
                     ForEach(self.items, id: \.self) { item in 
-                        ArcMenuCell(curve: self.curve, item: item)
+                        ArcMenuCell(curve: self.curve, item: item).environmentObject(self.menuObservable)
                     }
 
                 }

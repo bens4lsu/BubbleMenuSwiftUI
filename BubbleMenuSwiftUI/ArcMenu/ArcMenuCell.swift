@@ -14,6 +14,7 @@ enum ArcMenuCellError: Error {
 
 struct ArcMenuCell<Item: ArcMenuViewItem>: View {
     
+    @EnvironmentObject var menuObservable: ArcMenuViewObservable<Item>
     var curve: ArcMenuCurve
     var item: Item
     
@@ -38,10 +39,9 @@ struct ArcMenuCell<Item: ArcMenuViewItem>: View {
                     // cell out of range -- do nothing
                 }
             }.fill(ArcMenuConstants.Cell.bgColor)
-            self.item.view
+            ArcMenuViewItemView(item: self.item).environmentObject(self.menuObservable)
         }.padding(.bottom, ArcMenuConstants.Cell.bottomPadding)
          .padding(.top, ArcMenuConstants.Cell.topPadding)
-            
     }
     
     private func extrapolateDimensionOverQuadCurve(fromPercent t: CGFloat, start: CGFloat, controlPoint c1: CGFloat, end: CGFloat ) throws -> CGFloat {

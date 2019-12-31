@@ -10,6 +10,9 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @EnvironmentObject var menuObservable: ArcMenuViewObservable<MyMenuItem>
+    
     var menuItems = [MyMenuItem(name: "Item 1"),
                      MyMenuItem(name: "Item A"),
                      MyMenuItem(name: "Item #"),
@@ -20,10 +23,32 @@ struct ContentView: View {
                      MyMenuItem(name: "Item 🐶"),
                      MyMenuItem(name: "Item X")]
     
+    
+    
+    var itemDescription: String {
+        guard let item = menuObservable.menuItemSelected else {
+            return "No item has been selected."
+        }
+        return item.description
+    }
+    
     var body: some View {
-        ZStack {
-            ArcMenuView(items: menuItems)
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geometry in
+            return self.layoutView(forWidth: geometry.size.width)
+        }
+    }
+    
+    private func layoutView(forWidth width: CGFloat) -> AnyView {
+        if horizontalSizeClass == .compact {
+            return AnyView(ZStack{
+                ArcMenuView(items: menuItems).environmentObject(menuObservable)
+                Text(self.itemDescription).padding(.trailing, 12)
+            })
+        } else {
+            return AnyView(HStack{
+                ArcMenuView(items: menuItems).environmentObject(menuObservable)
+                Text(self.itemDescription).padding(.trailing, 12)
+            })
         }
     }
 }

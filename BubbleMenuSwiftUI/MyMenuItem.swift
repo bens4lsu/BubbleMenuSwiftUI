@@ -8,21 +8,22 @@
 
 import SwiftUI
 
+typealias ArcMenuViewItem = MyMenuItem
 
-
-class MyMenuItem: ArcMenuViewItem {
+class MyMenuItem: Hashable {
     
     var id: UUID
-    var name: String
-    
+    var name: String    
+
     init (name: String){
         self.id = UUID()
         self.name = name
     }
-    
-    var view: some View {
-        Text(self.name)
+            
+    var description: String {
+        #"Item selected is "\#(name)""#
     }
+    
     
     // MARK:  Methods to make class conform to Hashable
     static func == (lhs: MyMenuItem, rhs: MyMenuItem) -> Bool {
