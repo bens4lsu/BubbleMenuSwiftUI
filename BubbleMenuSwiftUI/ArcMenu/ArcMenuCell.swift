@@ -15,8 +15,19 @@ enum ArcMenuCellError: Error {
 struct ArcMenuCell<Item: ArcMenuViewItem>: View {
     
     @EnvironmentObject var menuObservable: ArcMenuViewObservable<Item>
+    @Environment(\.colorScheme) var colorScheme
+        
     var curve: ArcMenuCurve
     var item: Item
+    
+    var backgroundColor: Color {
+        if menuObservable.menuItemSelected == item {
+            return colorScheme == .dark ? ArcMenuConstants.ColorCode.cellBGSelectedDarkMode : ArcMenuConstants.ColorCode.cellBGSelectedLightMode
+        }
+        else {
+            return colorScheme == .dark ? ArcMenuConstants.ColorCode.cellBGDarkMode : ArcMenuConstants.ColorCode.cellBGLightMode
+        }
+    }
     
     var body: some View {
         GeometryReader { geometry in

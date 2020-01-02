@@ -7,17 +7,23 @@
 //
 
 
-// TODO:  Make the scroll stick.  https://blog.process-one.net/writing-a-custom-scroll-view-with-swiftui-in-a-chat-application/
-
-
 import SwiftUI
 
 struct ArcMenuView<Item>: View where Item:ArcMenuViewItem {
     
     @ObservedObject var curve = ArcMenuCurve(start: CGPoint(x: 0, y: 0), controlPoint: CGPoint(x:0, y:0), end: CGPoint(x:0, y:0))
     @EnvironmentObject var menuObservable: ArcMenuViewObservable<Item>
+    @Environment(\.colorScheme) var colorScheme
+    
+    @State private var contentHeight: CGFloat = 0.0
+    @State private var scrollOffset: CGFloat = 0.0
+    @State private var currentOffset: CGFloat = 0.0
     
     var items: [Item]
+    
+    var backgroundColor: Color {
+        colorScheme == .dark ? ArcMenuConstants.ColorCode.backgroundDarkMode : ArcMenuConstants.ColorCode.backgroundLightMode
+    }
     
     var body: some View {
         
@@ -43,16 +49,28 @@ struct ArcMenuView<Item>: View where Item:ArcMenuViewItem {
                 path.addQuadCurve(to: curveEnd, control: curveControlPoint)
                 path.addLine(to: CGPoint(x: 0, y: height))
                 
-            }.fill(ArcMenuConstants.bgColor)
+            }.fill(self.backgroundColor)
             VStack{
                 ScrollView {
                     ForEach(self.items, id: \.self) { item in 
                         ArcMenuCell(curve: self.curve, item: item).environmentObject(self.menuObservable)
                     }
-
-                }
+                    Spacer().frame(width: nil, height: 50.0)
+                }.offset(x: CGFloat.zero, y: self.scrollOffset)
+                    .clipped()
+                    .animation(.easeInOut)
+                    .gesture(DragGesture().onChanged({ self.onDragChanged($0) }))
             }
         }
+    }
+    
+    // Credit:  https://blog.process-one.net/writing-a-custom-scroll-view-with-swiftui-in-a-chat-application/
+    func onDragChanged(_ value: DragGesture.Value) {
+        // Update rendered offset
+        print("Start: \(value.startLocation.y)")
+        print("Start: \(value.location.y)")
+        self.scrollOffset = (value.location.y - value.startLocation.y)
+        print("Scrolloffset: \(self.scrollOffset)")
     }
 }
 

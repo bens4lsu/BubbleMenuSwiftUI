@@ -21,6 +21,11 @@ struct ContentView: View {
                      MyMenuItem(name: "Item т"),
                      MyMenuItem(name: "Item ⏰"),
                      MyMenuItem(name: "Item 🐶"),
+                     MyMenuItem(name: "Item ⚁"),
+                     MyMenuItem(name: "Item ∅"),
+                     MyMenuItem(name: "Item 🚆"),
+                     MyMenuItem(name: "Item 🏉"),
+                     MyMenuItem(name: "Item 🚴‍♂️"),
                      MyMenuItem(name: "Item X")]
     
     

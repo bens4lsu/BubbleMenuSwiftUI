@@ -31,6 +31,14 @@ struct ArcMenuConstants {
         static let bottomPadding: CGFloat = 5.0
         static let topPadding: CGFloat = 50.0
         static let bgColor = Color.gray
-        
+    }
+    
+    struct ColorCode {
+        static let backgroundLightMode = Color.black
+        static let backgroundDarkMode = Color.black
+        static let cellBGLightMode = Color.white
+        static let cellBGDarkMode = Color.gray
+        static let cellBGSelectedLightMode = Color.pink
+        static let cellBGSelectedDarkMode = Color.white
     }
 }
