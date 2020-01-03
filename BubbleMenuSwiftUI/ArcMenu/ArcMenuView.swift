@@ -70,7 +70,7 @@ struct ArcMenuView<Item>: View where Item:ArcMenuViewItem {
     
     var fullMenuButtons: some View {
         VStack{
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 ForEach(self.items, id: \.self) { item in
                     ArcMenuCell(curve: self.menuObservable.arcMenuCurve, item: item).environmentObject(self.menuObservable)
                 }
@@ -84,11 +84,10 @@ struct ArcMenuView<Item>: View where Item:ArcMenuViewItem {
     var hiddenMenuView: some View {
         GeometryReader { geometry in
             Path { path in
-                let height = geometry.size.height
                 path.move(to: CGPoint(x: 0, y: 0))
-                path.addQuadCurve(to: CGPoint(x: 0, y: height), control: CGPoint(x: ArcMenuConstants.hiddenMenuControlPointX, y: height * 0.5))
+                path.addQuadCurve(to: CGPoint(x: 0, y: geometry.size.height), control: CGPoint(x: ArcMenuConstants.hiddenMenuControlPointX, y: geometry.size.height * 0.5))
             }.fill(self.backgroundColor)
-            self.hiddenMenuButton
+            self.hiddenMenuButton.frame(width: ArcMenuConstants.hiddenMenuControlPointX / 2, height: geometry.size.height, alignment: .center)
         }
     }
     
@@ -106,10 +105,7 @@ struct ArcMenuView<Item>: View where Item:ArcMenuViewItem {
     // Credit:  https://blog.process-one.net/writing-a-custom-scroll-view-with-swiftui-in-a-chat-application/
     func onDragChanged(_ value: DragGesture.Value) {
         // Update rendered offset
-        print("Start: \(value.startLocation.y)")
-        print("Start: \(value.location.y)")
         self.scrollOffset = (value.location.y - value.startLocation.y)
-        print("Scrolloffset: \(self.scrollOffset)")
     }
 }
 

@@ -14,7 +14,14 @@ struct MyMenuItemView: View {
     
     @EnvironmentObject var menuObservable: ArcMenuViewObservable<MyMenuItem>
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @Environment(\.colorScheme) var colorScheme
+    
     var item: MyMenuItem
+    
+    var textColor: Color {
+        colorScheme == .dark  || menuObservable.menuItemSelected == item ? Color.white : Color.black
+    }
+       
     
     var body: some View {
         Button (action: {
@@ -23,11 +30,12 @@ struct MyMenuItemView: View {
                 print ("tapped \(self.item.name)")
                 self.menuObservable.menuItemSelected = self.item
                 self.menuObservable.showMenu = self.horizontalSizeClass == .regular
+                self.menuObservable.menuXOffset = 0
             }
         }) {
             Text(self.item.name)
             .font(.caption)
-            .foregroundColor(.white)
+            .foregroundColor(textColor)
             .padding(.leading, 7).padding(.top, 5)
         }
     }

@@ -49,7 +49,7 @@ struct ArcMenuCell<Item: ArcMenuViewItem>: View {
                 catch {
                     // cell out of range -- do nothing
                 }
-            }.fill(ArcMenuConstants.Cell.bgColor)
+            }.fill(self.backgroundColor)
             ArcMenuViewItemView(item: self.item).environmentObject(self.menuObservable)
         }.padding(.bottom, ArcMenuConstants.Cell.bottomPadding)
          .padding(.top, ArcMenuConstants.Cell.topPadding)

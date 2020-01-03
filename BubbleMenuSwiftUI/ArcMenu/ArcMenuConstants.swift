@@ -9,9 +9,7 @@
 import SwiftUI
 
 struct ArcMenuConstants {
-    
-    static let bgColor = Color.black
-    
+        
     // MARK: control the curviness of the background
     static let curveStartFactor: CGFloat = 0.25
     static let curveControlPointFactor: CGFloat = 0.80
@@ -30,7 +28,7 @@ struct ArcMenuConstants {
         static let widthFactor: CGFloat = 0.78
         static let bulgeFactor: CGFloat = 0.05
         static let bottomPadding: CGFloat = 5.0
-        static let topPadding: CGFloat = 50.0
+        static let topPadding: CGFloat = 30.0
         static let bgColor = Color.gray
     }
     
