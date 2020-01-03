@@ -46,8 +46,8 @@ struct ContentView: View {
     private func layoutView(forWidth width: CGFloat) -> AnyView {
         if horizontalSizeClass == .compact {
             return AnyView(ZStack{
-                ArcMenuView(items: menuItems).environmentObject(menuObservable)
                 Text(self.itemDescription).padding(.trailing, 12)
+                ArcMenuView(items: menuItems).environmentObject(menuObservable)
             })
         } else {
             return AnyView(HStack{

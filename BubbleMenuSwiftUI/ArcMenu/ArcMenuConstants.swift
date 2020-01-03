@@ -21,6 +21,7 @@ struct ArcMenuConstants {
     static let maxStartX: CGFloat = 250
     // max bulge in the curve
     static let maxControlPointX: CGFloat = Self.maxStartX + 370.0
+    static let hiddenMenuControlPointX: CGFloat = 50.0
         
     // MARK: control menuCell properties
     struct Cell {
@@ -41,4 +42,12 @@ struct ArcMenuConstants {
         static let cellBGSelectedLightMode = Color.pink
         static let cellBGSelectedDarkMode = Color.white
     }
+    
+    // MARK:  Images to use for button to pull menu back out
+    static let imageOpenMenuLightMode = Image(systemName: "doc.text.fill")
+    static let imageOpenMenuDarkMode = Image(systemName: "doc.text")
+    static let menuTransitionAnimationDuration: Double = 0.65
+    
+    
+    
 }

@@ -17,7 +17,6 @@
 		B5000D4A237CB19B00ED7C41 /* BubbleMenuSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5000D49237CB19B00ED7C41 /* BubbleMenuSwiftUIUITests.swift */; };
 		B5000D58237CBC3A00ED7C41 /* ArcMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5000D57237CBC3A00ED7C41 /* ArcMenuCell.swift */; };
 		B59913DC23B6DC45008E0018 /* ArcMenuConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59913DB23B6DC45008E0018 /* ArcMenuConstants.swift */; };
-		B59913DE23B6FEDA008E0018 /* ArcMenuCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59913DD23B6FEDA008E0018 /* ArcMenuCurve.swift */; };
 		B5AF4FDD23BA560200C94223 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AF4FDC23BA560200C94223 /* ContentView.swift */; };
 		B5E154E123BBB16B001A829C /* MyMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E154E023BBB16B001A829C /* MyMenuItemView.swift */; };
 		B5E154E323BBB722001A829C /* ArcMenuObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E154E223BBB722001A829C /* ArcMenuObservable.swift */; };
@@ -58,7 +57,6 @@
 		B5000D4B237CB19B00ED7C41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5000D57237CBC3A00ED7C41 /* ArcMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcMenuCell.swift; sourceTree = "<group>"; };
 		B59913DB23B6DC45008E0018 /* ArcMenuConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcMenuConstants.swift; sourceTree = "<group>"; };
-		B59913DD23B6FEDA008E0018 /* ArcMenuCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcMenuCurve.swift; sourceTree = "<group>"; };
 		B5AF4FDC23BA560200C94223 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B5E154E023BBB16B001A829C /* MyMenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuItemView.swift; sourceTree = "<group>"; };
 		B5E154E223BBB722001A829C /* ArcMenuObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcMenuObservable.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 			children = (
 				B59913DB23B6DC45008E0018 /* ArcMenuConstants.swift */,
 				B5E154E223BBB722001A829C /* ArcMenuObservable.swift */,
-				B59913DD23B6FEDA008E0018 /* ArcMenuCurve.swift */,
 				B5000D2B237CB19700ED7C41 /* ArcMenuView.swift */,
 				B5000D57237CBC3A00ED7C41 /* ArcMenuCell.swift */,
 			);
@@ -319,7 +316,6 @@
 			files = (
 				B5E154E123BBB16B001A829C /* MyMenuItemView.swift in Sources */,
 				B5FBBB8A23B7295900BACB45 /* MyMenuItem.swift in Sources */,
-				B59913DE23B6FEDA008E0018 /* ArcMenuCurve.swift in Sources */,
 				B5AF4FDD23BA560200C94223 /* ContentView.swift in Sources */,
 				B59913DC23B6DC45008E0018 /* ArcMenuConstants.swift in Sources */,
 				B5000D28237CB19700ED7C41 /* AppDelegate.swift in Sources */,

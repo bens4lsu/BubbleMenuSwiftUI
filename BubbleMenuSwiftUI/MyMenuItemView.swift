@@ -13,12 +13,17 @@ typealias ArcMenuViewItemView = MyMenuItemView
 struct MyMenuItemView: View {
     
     @EnvironmentObject var menuObservable: ArcMenuViewObservable<MyMenuItem>
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     var item: MyMenuItem
     
     var body: some View {
         Button (action: {
-            print ("tapped \(self.item.name)")
-            self.menuObservable.menuItemSelected = self.item
+            withAnimation(.linear(duration: ArcMenuConstants.menuTransitionAnimationDuration)) {
+
+                print ("tapped \(self.item.name)")
+                self.menuObservable.menuItemSelected = self.item
+                self.menuObservable.showMenu = self.horizontalSizeClass == .regular
+            }
         }) {
             Text(self.item.name)
             .font(.caption)

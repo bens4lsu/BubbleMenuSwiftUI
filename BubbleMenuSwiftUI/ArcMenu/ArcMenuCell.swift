@@ -54,6 +54,7 @@ struct ArcMenuCell<Item: ArcMenuViewItem>: View {
         }.padding(.bottom, ArcMenuConstants.Cell.bottomPadding)
          .padding(.top, ArcMenuConstants.Cell.topPadding)
     }
+
     
     private func extrapolateDimensionOverQuadCurve(fromPercent t: CGFloat, start: CGFloat, controlPoint c1: CGFloat, end: CGFloat ) throws -> CGFloat {
         if t > 1 || t < 0 {
