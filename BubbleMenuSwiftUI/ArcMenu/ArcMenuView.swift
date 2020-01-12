@@ -12,8 +12,9 @@ import SwiftUI
 struct ArcMenuView<Item>: View where Item:ArcMenuViewItem {
     
     @EnvironmentObject var menuObservable: ArcMenuViewObservable<Item>
-    @Environment(\.colorScheme) var colorScheme
-    
+    @Environment(\.colorScheme) var colorScheme 
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+
     @State private var contentHeight: CGFloat = 0.0
     @State private var scrollOffset: CGFloat = 0.0
     @State private var currentOffset: CGFloat = 0.0
@@ -76,6 +77,7 @@ struct ArcMenuView<Item>: View where Item:ArcMenuViewItem {
                 }
                 Spacer().frame(width: nil, height: 50.0)
             }.offset(x: CGFloat.zero, y: self.scrollOffset)
+                .padding(.top, ArcMenuConstants.paddingBeforeFirstCell)
                 .clipped()
                 .gesture(DragGesture().onChanged({ self.onDragChanged($0) }))
         }
@@ -93,14 +95,14 @@ struct ArcMenuView<Item>: View where Item:ArcMenuViewItem {
     
     var hiddenMenuButton: some View {
         Button(action: {
-            withAnimation(.easeInOut(duration: ArcMenuConstants.menuTransitionAnimationDuration)) {
+            withAnimation(.easeInOut(duration: ArcMenuConstants.transitionAnimationDuration)) {
                 self.menuObservable.showMenu = true
             }
         }) {
             self.imageOpenMenu
         }
     }
-    
+
     
     // Credit:  https://blog.process-one.net/writing-a-custom-scroll-view-with-swiftui-in-a-chat-application/
     func onDragChanged(_ value: DragGesture.Value) {

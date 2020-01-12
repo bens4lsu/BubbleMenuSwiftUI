@@ -22,10 +22,9 @@ struct MyMenuItemView: View {
         colorScheme == .dark  || menuObservable.menuItemSelected == item ? Color.white : Color.black
     }
        
-    
     var body: some View {
         Button (action: {
-            withAnimation(.linear(duration: ArcMenuConstants.menuTransitionAnimationDuration)) {
+            withAnimation(.linear(duration: ArcMenuConstants.transitionAnimationDuration)) {
 
                 print ("tapped \(self.item.name)")
                 self.menuObservable.menuItemSelected = self.item

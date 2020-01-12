@@ -38,14 +38,18 @@ struct ArcMenuConstants {
         static let cellBGLightMode = Color.white
         static let cellBGDarkMode = Color.gray
         static let cellBGSelectedLightMode = Color.pink
-        static let cellBGSelectedDarkMode = Color.white
+        static let cellBGSelectedDarkMode = Color(red: 111, green:111, blue:111)
     }
     
     // MARK:  Images to use for button to pull menu back out
     static let imageOpenMenuLightMode = Image(systemName: "doc.text.fill")
     static let imageOpenMenuDarkMode = Image(systemName: "doc.text")
-    static let menuTransitionAnimationDuration: Double = 0.65
     
+    
+    static let transitionAnimationDuration: Double = 0.65
+    static let paddingBeforeFirstCell: CGFloat = 16
+    
+   // FIXME:  If phone rotates from landscape to portrait, and menu is showing, and an item is selected, then hide the menu
     
     
 }
